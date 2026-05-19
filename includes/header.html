@@ -1,0 +1,54 @@
+<!-- ============================================================
+     HEADER — El Toldo Rojo
+     Este bloque se copia igual en TODAS las páginas.
+     Para cambiar el menú, edita solo este archivo.
+
+     CÓMO MARCAR LA PÁGINA ACTIVA:
+     En la página correspondiente, añade la clase "nav__enlace--activo"
+     al enlace que corresponda. Ej: en menu.html, el enlace "Menú"
+     lleva esa clase.
+     ============================================================ -->
+
+<header class="header">
+  <div class="contenedor">
+    <div class="header__inner">
+
+      <!-- LOGO
+           Cuando tengas el archivo del logo, reemplaza el texto
+           por: <img src="/assets/images/logo/logo.svg" alt="El Toldo Rojo">
+      -->
+      <a href="/index.html" class="header__logo" aria-label="El Toldo Rojo — Ir al inicio">
+        <span class="header__logo-placeholder">El Toldo Rojo</span>
+      </a>
+
+      <!-- BOTÓN MENÚ MÓVIL (visible solo en pantallas pequeñas) -->
+      <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- NAVEGACIÓN PRINCIPAL -->
+      <nav aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li><a href="/index.html"                          class="nav__enlace">Inicio</a></li>
+          <li><a href="/pages/hamburguesa-artesanal.html"    class="nav__enlace">Nuestra hamburguesa</a></li>
+          <li><a href="/pages/menu.html"                     class="nav__enlace">Menú</a></li>
+          <li><a href="/pages/domicilios.html"               class="nav__enlace">Domicilios</a></li>
+          <li><a href="/pages/blog/index.html"               class="nav__enlace">Blog</a></li>
+          <li><a href="/pages/contacto.html"                 class="nav__enlace">Contacto</a></li>
+          <li class="nav__cta">
+            <!-- Reemplaza XXXXXXXXXX por el número de WhatsApp con código de país sin + -->
+            <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+               class="btn btn-whatsapp"
+               target="_blank"
+               rel="noopener noreferrer">
+              Pedir ahora
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</header>

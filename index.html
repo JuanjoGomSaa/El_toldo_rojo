@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO básico -->
+  <title>Hamburguesas en Zipaquirá — Pan de papa hecho en casa | El Toldo Rojo</title>
+  <meta name="description" content="Hamburguesas artesanales con pan de papa casero en Zipaquirá. Carne 100% de res, cebolla caramelizada y sazón de barrio. Abrimos viernes y sábados desde las 5 pm. Pide por WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://eltoldorojo.com/">
+
+  <!-- Open Graph (previsualización en WhatsApp, redes sociales) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://eltoldorojo.com/">
+  <meta property="og:title"       content="Hamburguesas en Zipaquirá — Pan de papa hecho en casa | El Toldo Rojo">
+  <meta property="og:description" content="Hamburguesas artesanales con pan de papa casero. Carne 100% de res. Viernes y sábados desde las 5 pm en Zipaquirá.">
+  <meta property="og:image"       content="/assets/images/og/og-image.jpg">
+  <!-- [PLACEHOLDER og:image] Imagen 1200x630px — foto de la hamburguesa o del puesto de noche -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/images/logo/favicon.ico">
+  <!-- [PLACEHOLDER favicon] Archivo 32x32px con el logo o inicial del negocio -->
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages/home.css">
+
+  <!-- Schema: LocalBusiness (datos estructurados para Google y LLMs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "El Toldo Rojo",
+    "description": "Puesto de hamburguesas artesanales con pan de papa casero y carne 100% de res en Zipaquirá, Cundinamarca.",
+    "url": "https://eltoldorojo.com",
+    "telephone": "+57XXXXXXXXXX",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[Dirección completa]",
+      "addressLocality": "Zipaquirá",
+      "addressRegion": "Cundinamarca",
+      "addressCountry": "CO"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Friday", "Saturday"],
+        "opens": "17:00",
+        "closes": "21:30"
+      }
+    ],
+    "servesCuisine": "Hamburguesas artesanales",
+    "priceRange": "$$",
+    "menu": "https://eltoldorojo.com/pages/menu.html",
+    "hasMap": "https://maps.app.goo.gl/Td34TymxHBWLH1bv8"
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Hacen domicilios en Zipaquirá?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Estamos activando el servicio de domicilios para la zona residencial cercana a nuestro puesto. Puedes hacer tu pedido por WhatsApp y te confirmamos disponibilidad y cobertura para tu dirección."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta la hamburguesa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La hamburguesa artesanal cuesta $18.000 COP. El combo con bebida incluida sale en $22.000 COP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué días y en qué horario atienden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Abrimos los viernes y sábados de 5:00 pm a 9:30 pm en Zipaquirá."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué el pan es diferente al de otros puestos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Porque lo hacemos nosotros. El pan de papa es producción propia: lo horneamos con nuestra receta, no lo compramos a ningún proveedor industrial."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER — copiado desde _includes/header.html
+       ============================================================ -->
+  <header class="header">
+    <div class="contenedor">
+      <div class="header__inner">
+        <a href="/index.html" class="header__logo" aria-label="El Toldo Rojo — Ir al inicio">
+          <!-- [PLACEHOLDER logo]
+               Cuando tengas el archivo SVG reemplaza la línea de abajo por:
+               <img src="/assets/images/logo/logo.svg" alt="El Toldo Rojo"> -->
+          <span class="header__logo-placeholder">El Toldo Rojo</span>
+        </a>
+
+        <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav aria-label="Navegación principal">
+          <ul class="nav__lista">
+            <li><a href="/index.html"                       class="nav__enlace nav__enlace--activo">Inicio</a></li>
+            <li><a href="/pages/hamburguesa-artesanal.html" class="nav__enlace">Nuestra hamburguesa</a></li>
+            <li><a href="/pages/menu.html"                  class="nav__enlace">Menú</a></li>
+            <li><a href="/pages/domicilios.html"            class="nav__enlace">Domicilios</a></li>
+            <li><a href="/pages/blog/index.html"            class="nav__enlace">Blog</a></li>
+            <li><a href="/pages/contacto.html"              class="nav__enlace">Contacto</a></li>
+            <li class="nav__cta">
+              <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+                 class="btn btn-whatsapp"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Pedir ahora
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         SECCIÓN 1 — HERO
+         Primera pantalla visible. Debe convencer en 3 segundos.
+         ============================================================ -->
+    <section class="hero seccion-clara" aria-label="Presentación">
+      <div class="contenedor hero__grid">
+
+        <!-- Texto -->
+        <div class="hero__texto">
+          <span class="badge">Zipaquirá · Viernes y sábados</span>
+
+          <h1>Hamburguesas en Zipaquirá hechas con pan de papa casero</h1>
+
+          <p class="hero__subtitulo">
+            Carne 100% de res, pan horneado en casa y sabor que se nota desde el primer mordisco.
+            Llevamos el puesto a tu barrio los viernes y sábados desde las 5&nbsp;pm.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+               class="btn btn-whatsapp"
+               target="_blank"
+               rel="noopener noreferrer">
+              <!-- Icono WhatsApp -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+              </svg>
+              Pedir por WhatsApp
+            </a>
+            <a href="#menu" class="btn btn-secundario">Ver el menú</a>
+          </div>
+        </div>
+
+        <!-- Imagen hero -->
+        <div class="hero__imagen">
+          <!-- [PLACEHOLDER hero-home.jpg]
+               Foto ideal: hamburguesa completa con buena iluminación cálida,
+               o el puesto de noche con el toldo iluminado.
+               Tamaño recomendado: 800x600px, formato WebP.
+               Reemplaza el div por:
+               <img src="/assets/images/hero/hero-home.jpg"
+                    alt="Hamburguesa artesanal de El Toldo Rojo en Zipaquirá"
+                    width="800" height="600" loading="eager"> -->
+          <div class="placeholder-imagen" style="height: 420px;">
+            📸 Foto principal<br>
+            <small>hero-home.jpg — 800×600px</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 2 — DIFERENCIADOR DE PRODUCTO
+         Por qué somos distintos. Argumentos concretos, sin relleno.
+         ============================================================ -->
+    <section class="seccion seccion-gris" id="diferenciador" aria-label="Qué nos hace diferentes">
+      <div class="contenedor diferenciador__grid">
+
+        <!-- Imagen del pan / proceso -->
+        <div class="diferenciador__imagen">
+          <!-- [PLACEHOLDER pan-de-papa.jpg]
+               Foto del pan recién horneado o del proceso de preparación.
+               Tamaño recomendado: 600x700px, formato WebP.
+               Reemplaza el div por:
+               <img src="/assets/images/producto/pan-de-papa.jpg"
+                    alt="Pan de papa artesanal horneado en El Toldo Rojo"
+                    width="600" height="700" loading="lazy"> -->
+          <div class="placeholder-imagen" style="height: 380px;">
+            📸 Pan de papa casero<br>
+            <small>pan-de-papa.jpg — 600×700px</small>
+          </div>
+        </div>
+
+        <!-- Texto -->
+        <div class="diferenciador__texto">
+          <span class="badge">Lo que nos diferencia</span>
+          <h2>Carne real, pan hecho en casa — sin ingredientes industriales</h2>
+
+          <p>
+            La mayoría de los puestos de hamburguesas en Zipaquirá trabajan con pan comprado,
+            carne reconstituida y salsas de bolsa. En El Toldo Rojo no.
+          </p>
+
+          <ul class="diferenciador__lista" aria-label="Ingredientes de la hamburguesa">
+            <li>
+              <span class="diferenciador__icono" aria-hidden="true">🍞</span>
+              <div>
+                <strong>Pan de papa artesanal</strong>
+                <p>Horneado por nosotros — esponjoso por dentro, con esa costra suave que aguanta la carne sin desarmarse.</p>
+              </div>
+            </li>
+            <li>
+              <span class="diferenciador__icono" aria-hidden="true">🥩</span>
+              <div>
+                <strong>150g de carne 100% de res</strong>
+                <p>Molida fresca, sin rellenos ni mezclas. La cantidad justa para que cada mordisco sepa a carne de verdad.</p>
+              </div>
+            </li>
+            <li>
+              <span class="diferenciador__icono" aria-hidden="true">🧅</span>
+              <div>
+                <strong>Cebolla caramelizada</strong>
+                <p>Cocinada lentamente, no salteada a las carreras. Hace toda la diferencia en el sabor final.</p>
+              </div>
+            </li>
+            <li>
+              <span class="diferenciador__icono" aria-hidden="true">🥗</span>
+              <div>
+                <strong>Lechuga fresca, tomate y queso fundido</strong>
+                <p>Sin salsas industriales de bolsa. Lo que entra, es lo que sientes.</p>
+              </div>
+            </li>
+          </ul>
+
+          <p class="diferenciador__cierre">
+            No es un argumento de marketing. Es lo que entra en cada hamburguesa, noche tras noche.
+            Cuando la pruebas, la diferencia se nota. Y por eso la gente vuelve el siguiente viernes.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 3 — UBICACIÓN Y HORARIO
+         Responde: ¿dónde están y cuándo? Sin fricción.
+         ============================================================ -->
+    <section class="seccion seccion-clara" id="ubicacion" aria-label="Ubicación y horario">
+      <div class="contenedor ubicacion__grid">
+
+        <div class="ubicacion__texto">
+          <span class="badge">Encuéntranos</span>
+          <h2>¿Dónde encontrarnos? Horario y ubicación en Zipaquirá</h2>
+
+          <p>
+            Estamos en el corredor residencial de <strong>[nombre del barrio / referencia de las torres]</strong>,
+            Zipaquirá. Si vives en la zona, nos tienes a menos de 10 minutos caminando.
+            El toldo rojo hace que el puesto sea fácil de identificar desde la calle.
+          </p>
+
+          <!-- Horario en tabla clara -->
+          <div class="horario" aria-label="Horario de atención">
+            <div class="horario__fila">
+              <span class="horario__dia">Viernes</span>
+              <span class="horario__hora">5:00 pm – 9:30 pm</span>
+              <span class="horario__estado horario__estado--abierto">Abierto</span>
+            </div>
+            <div class="horario__fila">
+              <span class="horario__dia">Sábado</span>
+              <span class="horario__hora">5:00 pm – 9:30 pm</span>
+              <span class="horario__estado horario__estado--abierto">Abierto</span>
+            </div>
+            <div class="horario__fila">
+              <span class="horario__dia">Lunes – Jueves</span>
+              <span class="horario__hora">—</span>
+              <span class="horario__estado horario__estado--cerrado">Cerrado</span>
+            </div>
+          </div>
+
+          <p class="ubicacion__aviso">
+            Antes de salir, escríbenos por WhatsApp para confirmar que estamos abiertos esa noche.
+            Te respondemos en minutos.
+          </p>
+
+          <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20%C2%BFestar%C3%A1n%20abiertos%20hoy%3F"
+             class="btn btn-primario"
+             target="_blank"
+             rel="noopener noreferrer">
+            Consultar disponibilidad
+          </a>
+        </div>
+
+        <!-- Mapa -->
+        <div class="ubicacion__mapa">
+          <!-- [PLACEHOLDER mapa Google Maps]
+               Pasos para obtener el embed:
+               1. Abre Google Maps y busca el puesto
+               2. Clic en "Compartir" → "Insertar un mapa"
+               3. Copia el <iframe> y pégalo aquí reemplazando este div
+               El iframe debe tener width="100%" height="400" -->
+          <div class="placeholder-imagen" style="height: 380px; border-radius: 12px;">
+            🗺️ Mapa de Google Maps<br>
+            <small>Insertar iframe embed de Google Maps aquí</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 4 — DOMICILIOS
+         CTA transaccional. Responde: ¿cómo pido?
+         ============================================================ -->
+    <section class="seccion seccion-oscura" id="domicilios" aria-label="Servicio de domicilios">
+      <div class="contenedor domicilios__inner">
+
+        <div class="domicilios__texto">
+          <span class="badge">Domicilios Zipaquirá</span>
+          <h2>Pide tu hamburguesa artesanal a domicilio en Zipaquirá</h2>
+          <p>Si no quieres salir, te la llevamos. Así de simple.</p>
+        </div>
+
+        <!-- Pasos del proceso -->
+        <ol class="domicilios__pasos" aria-label="Cómo pedir a domicilio">
+          <li class="domicilios__paso">
+            <span class="domicilios__numero" aria-hidden="true">1</span>
+            <div>
+              <strong>Escríbenos por WhatsApp</strong>
+              <p>Cuéntanos qué quieres pedir y dinos tu dirección.</p>
+            </div>
+          </li>
+          <li class="domicilios__paso">
+            <span class="domicilios__numero" aria-hidden="true">2</span>
+            <div>
+              <strong>Te confirmamos y preparamos</strong>
+              <p>Verificamos que cubrimos tu zona y empezamos a preparar tu pedido.</p>
+            </div>
+          </li>
+          <li class="domicilios__paso">
+            <span class="domicilios__numero" aria-hidden="true">3</span>
+            <div>
+              <strong>Recibes tu hamburguesa</strong>
+              <p>Recién hecha, lista para comer. Pagas en efectivo o por Nequi.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="domicilios__meta">
+          <span>📍 Zona: <strong>[indicar barrios cubiertos]</strong></span>
+          <span>⏱ Tiempo estimado: <strong>[X–X minutos]</strong></span>
+          <span>💳 Pago: <strong>Efectivo · Nequi</strong></span>
+        </div>
+
+        <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20pedir%20un%20domicilio"
+           class="btn btn-whatsapp"
+           target="_blank"
+           rel="noopener noreferrer">
+          Pedir domicilio ahora
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 5 — MENÚ Y PRECIOS
+         Precios visibles desde el primer scroll. Sin sorpresas.
+         ============================================================ -->
+    <section class="seccion seccion-clara" id="menu" aria-label="Menú y precios">
+      <div class="contenedor">
+
+        <div class="seccion__cabecera">
+          <span class="badge">Menú</span>
+          <h2>Nuestro menú — hamburguesas artesanales desde $18.000</h2>
+          <p>Sin letra pequeña. Aquí está lo que servimos y lo que vale cada cosa.</p>
+        </div>
+
+        <div class="menu__grid">
+
+          <!-- Tarjeta producto 1 -->
+          <article class="menu__tarjeta" aria-label="La hamburguesa El Toldo Rojo">
+            <!-- [PLACEHOLDER hamburguesa-completa.jpg]
+                 Foto de la hamburguesa armada, desde arriba o de perfil.
+                 Tamaño recomendado: 600x400px, formato WebP.
+                 Reemplaza el div por:
+                 <img src="/assets/images/producto/hamburguesa-completa.jpg"
+                      alt="Hamburguesa artesanal El Toldo Rojo" width="600" height="400" loading="lazy"> -->
+            <div class="placeholder-imagen" style="height: 220px; border-radius: 12px 12px 0 0;">
+              📸 Hamburguesa completa<br>
+              <small>hamburguesa-completa.jpg</small>
+            </div>
+            <div class="menu__tarjeta-cuerpo">
+              <h3>La hamburguesa El Toldo Rojo</h3>
+              <p>La clásica. La razón por la que vuelven.</p>
+              <ul class="menu__ingredientes" aria-label="Ingredientes">
+                <li>Pan de papa casero</li>
+                <li>150g carne 100% de res</li>
+                <li>Cebolla caramelizada</li>
+                <li>Lechuga, tomate y queso</li>
+              </ul>
+              <div class="menu__precio">
+                <span class="menu__valor">$18.000 COP</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta producto 2 -->
+          <article class="menu__tarjeta" aria-label="Combo con bebida">
+            <!-- [PLACEHOLDER hamburguesa-combo.jpg]
+                 Foto del combo: hamburguesa + bebida.
+                 Tamaño recomendado: 600x400px, formato WebP.
+                 Reemplaza el div por:
+                 <img src="/assets/images/producto/hamburguesa-principal.jpg"
+                      alt="Combo hamburguesa con bebida El Toldo Rojo" width="600" height="400" loading="lazy"> -->
+            <div class="placeholder-imagen" style="height: 220px; border-radius: 12px 12px 0 0;">
+              📸 Combo con bebida<br>
+              <small>hamburguesa-principal.jpg</small>
+            </div>
+            <div class="menu__tarjeta-cuerpo">
+              <h3>Combo con bebida</h3>
+              <p>La hamburguesa completa más tu bebida favorita.</p>
+              <ul class="menu__ingredientes" aria-label="Ingredientes">
+                <li>Todo lo de la hamburguesa clásica</li>
+                <li>Bebida incluida</li>
+              </ul>
+              <div class="menu__precio">
+                <span class="menu__valor">$22.000 COP</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- [PLACEHOLDER tarjeta adicional]
+               Si tienes más ítems en el menú, duplica el bloque <article class="menu__tarjeta">
+               de arriba y ajusta el contenido. Máximo 4 tarjetas para no saturar la sección. -->
+
+        </div>
+
+        <div class="menu__cta">
+          <p>¿Tienes dudas sobre el menú? Escríbenos antes de venir.</p>
+          <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20tienen%20disponible"
+             class="btn btn-primario"
+             target="_blank"
+             rel="noopener noreferrer">
+            Preguntar por WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 6 — RESEÑAS / PRUEBA SOCIAL
+         La voz de los clientes convence más que la tuya.
+         ============================================================ -->
+    <section class="seccion seccion-gris" id="resenas" aria-label="Opiniones de clientes">
+      <div class="contenedor">
+
+        <div class="seccion__cabecera">
+          <span class="badge">Opiniones</span>
+          <h2>Lo que dicen nuestros clientes del barrio</h2>
+        </div>
+
+        <div class="resenas__grid">
+
+          <!-- [PLACEHOLDER reseña 1]
+               Reemplaza el texto por una reseña real.
+               Prioriza reseñas que mencionen: pan casero, carne de verdad,
+               "vivo cerca", "vuelvo todos los viernes". -->
+          <blockquote class="resena__tarjeta">
+            <p>"Llevo meses pasando por el puesto los viernes y siempre está buenísima. El pan lo hacen ellos mismos y se nota. No es lo mismo que otras hamburguesas del sector."</p>
+            <footer>
+              <span class="resena__nombre">Carlos M.</span>
+              <span class="resena__lugar">Residente de [nombre del barrio]</span>
+              <div class="resena__estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+            </footer>
+          </blockquote>
+
+          <!-- [PLACEHOLDER reseña 2] -->
+          <blockquote class="resena__tarjeta">
+            <p>"La probé por curiosidad y ya la tengo de plan fijo los sábados. La carne es de verdad, no esa cosa procesada de otros sitios. Y el precio está muy bien."</p>
+            <footer>
+              <span class="resena__nombre">Juliana R.</span>
+              <span class="resena__lugar">Zipaquirá</span>
+              <div class="resena__estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+            </footer>
+          </blockquote>
+
+          <!-- [PLACEHOLDER reseña 3]
+               Añade una tercera reseña cuando la tengas. -->
+          <blockquote class="resena__tarjeta resena__tarjeta--placeholder">
+            <p class="resena__placeholder-texto">Tu reseña aquí — pídele a tus clientes habituales que dejen su opinión en Google y cópiala en este bloque.</p>
+            <footer>
+              <span class="resena__nombre">—</span>
+              <span class="resena__lugar">Zipaquirá</span>
+            </footer>
+          </blockquote>
+
+        </div>
+
+        <div class="resenas__cta">
+          <p>¿Ya nos conoces? Tu opinión ayuda a que más vecinos del barrio nos encuentren.</p>
+          <a href="https://maps.app.goo.gl/Td34TymxHBWLH1bv8"
+             class="btn btn-secundario"
+             target="_blank"
+             rel="noopener noreferrer">
+            Dejar reseña en Google
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 7 — FAQ
+         SEO + GEO (citabilidad en LLMs) + respuesta a objeciones.
+         ============================================================ -->
+    <section class="seccion seccion-clara" id="faq" aria-label="Preguntas frecuentes">
+      <div class="contenedor">
+
+        <div class="seccion__cabecera">
+          <span class="badge">FAQ</span>
+          <h2>Preguntas frecuentes sobre El Toldo Rojo</h2>
+        </div>
+
+        <ul class="faq__lista" role="list">
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿Qué hace diferente a las hamburguesas de El Toldo Rojo frente a otros puestos de Zipaquirá?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>La diferencia principal está en dos cosas que casi nadie más hace en Zipaquirá: el pan y la carne. El pan de papa lo horneamos nosotros mismos con nuestra receta — no lo compramos en ningún proveedor. Eso le da una textura esponjosa por dentro y una costra suave que aguanta bien la carne sin deshacerse. Y la carne es 100% de res, 150 gramos por hamburguesa, sin mezclas ni rellenos. En un mercado donde la mayoría de puestos trabaja con ingredientes industriales, eso se nota en el sabor desde el primer mordisco.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿Cuánto cuesta una hamburguesa en El Toldo Rojo?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>La hamburguesa artesanal cuesta $18.000 COP. Si la quieres con bebida incluida, el combo sale en $22.000 COP. Sin letra pequeña ni cobros extra. Para lo que recibes — pan hecho en casa, carne real, cebolla caramelizada, lechuga, tomate y queso — el precio está muy por debajo de lo que cobran otros sitios con ingredientes más básicos.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿Qué días y en qué horario atiende El Toldo Rojo en Zipaquirá?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>Abrimos los viernes y los sábados, de 5:00 pm a 9:30 pm. Somos un puesto fijo — no nos movemos de ubicación — pero si algún fin de semana hay algún cambio, lo avisamos con tiempo por WhatsApp y en nuestras redes. La mejor forma de confirmar que estamos abiertos antes de salir de casa es escribirnos un mensaje rápido por WhatsApp.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿El Toldo Rojo hace domicilios en Zipaquirá?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>Sí, estamos activando el servicio de domicilios para la zona residencial cercana a nuestro puesto. El proceso es directo: nos escribes por WhatsApp con tu pedido y tu dirección, te confirmamos si llegamos a tu zona y te damos el tiempo estimado de entrega. Aceptamos pago en efectivo y por Nequi.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿Dónde está ubicado el puesto El Toldo Rojo en Zipaquirá?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>Estamos en el corredor residencial de [nombre del barrio], Zipaquirá. Es una zona de alta densidad residencial — torres de apartamentos, andenes amplios, actividad peatonal por las noches. Si vives en los edificios de la zona, probablemente nos quedes a menos de diez minutos caminando. El toldo rojo hace que el puesto sea fácil de identificar desde la calle. También puedes encontrarnos buscando "El Toldo Rojo Zipaquirá" en Google Maps.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿El Toldo Rojo tiene licencia para operar como puesto de comida en Zipaquirá?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>Sí. Operamos con todos los permisos en regla. Somos un puesto fijo y con licencia, lo que significa que no desaparecemos de un día para otro ni operamos en la informalidad. Eso también implica estándares de higiene y manipulación de alimentos que no todos los puestos callejeros de la zona cumplen.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿Puedo pagar con tarjeta o solo en efectivo?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>Por ahora manejamos efectivo y Nequi. No aceptamos tarjeta débito ni crédito de forma directa. Si vas a venir, lo más práctico es traer el valor exacto o tener Nequi a mano — $18.000 la hamburguesa, $22.000 el combo con bebida.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿Cuánto tiempo tengo que esperar para recibir mi hamburguesa?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>Nuestro objetivo es que esperes menos de tres minutos desde que haces el pedido. Trabajamos con un menú enfocado precisamente para poder preparar rápido sin sacrificar calidad. En los momentos de mayor movimiento, entre las 7 pm y 9 pm, puede haber un poco más de espera — pero seguimos siendo mucho más rápidos que cualquier restaurante.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿Qué ingredientes lleva la hamburguesa artesanal?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>Cada hamburguesa lleva: pan de papa hecho en casa, 150 gramos de carne 100% de res, cebolla caramelizada cocinada lentamente, lechuga fresca, tomate y queso fundido. Sin salsas industriales de bolsa. Si tienes alguna alergia o preferencia específica — sin cebolla, sin queso — dínos al momento del pedido y lo ajustamos.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <button class="faq__pregunta" aria-expanded="false">
+              <h3>¿Por qué El Toldo Rojo solo abre los fines de semana?</h3>
+              <span class="faq__icono" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__respuesta" role="region">
+              <p>Somos un negocio familiar operado por miembros de nuestra propia familia, sin empleados externos. Eso nos permite mantener un control de calidad real sobre cada hamburguesa que sale — pero también significa que tenemos capacidad para dos noches de operación a la semana. Lo que preparamos cada viernes y sábado es lo mismo que comería nuestra propia familia.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECCIÓN 8 — CTA FINAL
+         Última oportunidad antes del footer. Directa y sin adornos.
+         ============================================================ -->
+    <section class="seccion cta-final" aria-label="Llamada a la acción final">
+      <div class="contenedor cta-final__inner">
+        <h2>¿Listo para probarla?</h2>
+        <p>Esta noche no tienes que cocinar. Pasa por el puesto el viernes o el sábado a partir de las 5&nbsp;pm, o escríbenos si quieres pedir a domicilio.</p>
+        <div class="cta-final__botones">
+          <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+             class="btn btn-whatsapp"
+             target="_blank"
+             rel="noopener noreferrer">
+            Pedir por WhatsApp
+          </a>
+          <a href="https://maps.app.goo.gl/Td34TymxHBWLH1bv8"
+             class="btn btn-secundario"
+             target="_blank"
+             rel="noopener noreferrer">
+            Cómo llegar
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER — copiado desde _includes/footer.html
+       ============================================================ -->
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer__grid">
+        <div class="footer__marca">
+          <span class="footer__logo-placeholder">El Toldo Rojo</span>
+          <p>Hamburguesas artesanales con pan de papa casero en Zipaquirá. Abrimos los viernes y sábados desde las 5 pm.</p>
+        </div>
+        <div>
+          <p class="footer__titulo">Páginas</p>
+          <ul class="footer__enlaces">
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="/pages/hamburguesa-artesanal.html">Nuestra hamburguesa</a></li>
+            <li><a href="/pages/menu.html">Menú y precios</a></li>
+            <li><a href="/pages/domicilios.html">Domicilios</a></li>
+            <li><a href="/pages/blog/index.html">Blog</a></li>
+            <li><a href="/pages/contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__titulo">Encuéntranos</p>
+          <div class="footer__dato">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>[Dirección completa], Zipaquirá</span>
+          </div>
+          <div class="footer__dato">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Viernes y sábados · 5:00 pm – 9:30 pm</span>
+          </div>
+          <div class="footer__dato">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <a href="https://wa.me/57XXXXXXXXXX" target="_blank" rel="noopener noreferrer">+57 XXX XXX XXXX</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 El Toldo Rojo · Zipaquirá, Cundinamarca</span>
+        <span>Hecho con amor y pan de papa casero 🍔</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Botón flotante WhatsApp — siempre visible -->
+  <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20quiero%20hacer%20un%20pedido%20a%20El%20Toldo%20Rojo"
+     class="whatsapp-flotante"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chatear por WhatsApp con El Toldo Rojo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+    <span>Pedir ahora</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/faq.js"></script>
+
+</body>
+</html>

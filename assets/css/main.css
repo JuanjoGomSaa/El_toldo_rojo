@@ -1,0 +1,236 @@
+/* ============================================================
+   EL TOLDO ROJO — Estilos globales
+   Aquí viven los colores, tipografía y espaciados de toda la web.
+   Si cambias una variable aquí, cambia en todas las páginas.
+   ============================================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap');
+
+/* --- Variables globales --- */
+:root {
+  /* Colores */
+  --color-rojo:        #C0392B;   /* Rojo toldo — color principal de marca */
+  --color-rojo-oscuro: #96281B;   /* Rojo para hover de botones */
+  --color-crema:       #FDF6EC;   /* Fondo cálido — evoca pan artesanal */
+  --color-negro:       #1A1A1A;   /* Textos principales */
+  --color-gris:        #5C5C5C;   /* Textos secundarios y pies de sección */
+  --color-gris-claro:  #EEEBE5;   /* Fondos de secciones alternas */
+  --color-blanco:      #FFFFFF;
+
+  /* Tipografía */
+  --fuente-titulo:  'Playfair Display', Georgia, serif;  /* H1, H2 — carácter artesanal */
+  --fuente-cuerpo:  'DM Sans', system-ui, sans-serif;    /* Párrafos, botones, nav */
+
+  /* Tamaños de fuente — escala fluida */
+  --texto-xs:   0.75rem;   /*  12px */
+  --texto-sm:   0.875rem;  /*  14px */
+  --texto-base: 1rem;      /*  16px */
+  --texto-md:   1.125rem;  /*  18px */
+  --texto-lg:   1.375rem;  /*  22px */
+  --texto-xl:   1.75rem;   /*  28px */
+  --texto-2xl:  2.25rem;   /*  36px */
+  --texto-3xl:  3rem;      /*  48px */
+
+  /* Espaciados */
+  --espacio-xs:  0.5rem;   /*   8px */
+  --espacio-sm:  1rem;     /*  16px */
+  --espacio-md:  1.5rem;   /*  24px */
+  --espacio-lg:  2.5rem;   /*  40px */
+  --espacio-xl:  4rem;     /*  64px */
+  --espacio-2xl: 6rem;     /*  96px */
+
+  /* Contenedor máximo */
+  --ancho-max:   1100px;
+
+  /* Bordes */
+  --radio-sm:  6px;
+  --radio-md:  12px;
+  --radio-lg:  24px;
+
+  /* Sombras */
+  --sombra-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --sombra-md: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* --- Reset base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  font-size: var(--texto-base);
+  color: var(--color-negro);
+  background-color: var(--color-crema);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Contenedor centrado reutilizable --- */
+.contenedor {
+  width: 90%;
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+}
+
+/* --- Tipografía global --- */
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulo);
+  line-height: 1.2;
+  color: var(--color-negro);
+}
+
+h1 { font-size: var(--texto-3xl); }
+h2 { font-size: var(--texto-2xl); }
+h3 { font-size: var(--texto-xl);  }
+
+p {
+  max-width: 65ch; /* Líneas cómodas de leer — nunca más de 65 caracteres */
+  color: var(--color-gris);
+}
+
+a {
+  color: var(--color-rojo);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Botones --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radio-sm);
+  font-family: var(--fuente-cuerpo);
+  font-size: var(--texto-base);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.btn-primario {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-rojo-oscuro);
+  color: var(--color-blanco);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--color-rojo);
+  border: 2px solid var(--color-rojo);
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: var(--color-blanco);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  color: var(--color-blanco);
+}
+
+/* --- Secciones alternas --- */
+/* Alterna crema / gris claro para separar secciones sin usar bordes */
+.seccion {
+  padding: var(--espacio-xl) 0;
+}
+
+.seccion-clara {
+  background-color: var(--color-crema);
+}
+
+.seccion-gris {
+  background-color: var(--color-gris-claro);
+}
+
+.seccion-oscura {
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+}
+
+.seccion-oscura h2,
+.seccion-oscura h3,
+.seccion-oscura p {
+  color: var(--color-blanco);
+}
+
+/* --- Placeholder de imagen reutilizable ---
+   Úsalo mientras no tengas la foto real.
+   Clase: placeholder-imagen
+   Añade un atributo data-label="nombre de la foto" para identificarla */
+.placeholder-imagen {
+  background-color: var(--color-gris-claro);
+  border: 2px dashed #BBBBBB;
+  border-radius: var(--radio-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gris);
+  font-size: var(--texto-sm);
+  font-family: var(--fuente-cuerpo);
+  text-align: center;
+  padding: var(--espacio-md);
+}
+
+/* --- Etiqueta destacada (badge) --- */
+.badge {
+  display: inline-block;
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  font-size: var(--texto-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radio-lg);
+}
+
+/* --- Responsive: pantallas pequeñas --- */
+@media (max-width: 768px) {
+  h1 { font-size: var(--texto-2xl); }
+  h2 { font-size: var(--texto-xl);  }
+  h3 { font-size: var(--texto-lg);  }
+
+  .seccion {
+    padding: var(--espacio-lg) 0;
+  }
+}
