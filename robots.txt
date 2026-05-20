@@ -1,0 +1,8 @@
+# El Toldo Rojo — robots.txt
+# Le dice a Google y otros rastreadores qué pueden indexar.
+
+User-agent: *
+Allow: /
+
+# Sitemap: ayuda a Google a encontrar todas las páginas
+Sitemap: https://eltoldorojo.com/sitemap.xml

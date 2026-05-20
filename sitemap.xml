@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  El Toldo Rojo — Sitemap XML
+  Lista todas las URLs del sitio para que Google las indexe rápido.
+  Cuando añadas una página nueva, agrégala aquí con su <url>.
+  Formato de fecha: YYYY-MM-DD
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home principal — prioridad máxima -->
+  <url>
+    <loc>https://eltoldorojo.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Landing artesanal -->
+  <url>
+    <loc>https://eltoldorojo.com/pages/hamburguesa-artesanal.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Menú y precios -->
+  <url>
+    <loc>https://eltoldorojo.com/pages/menu.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Domicilios -->
+  <url>
+    <loc>https://eltoldorojo.com/pages/domicilios.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contacto -->
+  <url>
+    <loc>https://eltoldorojo.com/pages/contacto.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: listado -->
+  <url>
+    <loc>https://eltoldorojo.com/pages/blog/index.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog: artículo 1 -->
+  <url>
+    <loc>https://eltoldorojo.com/pages/blog/mejores-hamburguesas-zipaquira.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!--
+    [PLACEHOLDER artículos futuros]
+    Cuando publiques un artículo nuevo, añade un bloque <url> aquí.
+    Ejemplo:
+    <url>
+      <loc>https://eltoldorojo.com/pages/blog/pan-de-papa-hamburguesa.html</loc>
+      <lastmod>2025-02-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  -->
+
+</urlset>

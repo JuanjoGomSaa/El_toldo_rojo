@@ -1,0 +1,859 @@
+/* ============================================================
+   EL TOLDO ROJO — Estilos compartidos de las páginas internas
+   Cubre: hamburguesa-artesanal, menu, domicilios, contacto.
+   Depende de main.css y components.css.
+   ============================================================ */
+
+
+/* -------------------------
+   HERO DE LANDING
+   (hamburguesa-artesanal, domicilios)
+   Estructura de dos columnas: texto + imagen
+   ------------------------- */
+
+.landing-hero {
+  padding: var(--espacio-xl) 0;
+  padding-top: var(--espacio-2xl);
+}
+
+.landing-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--espacio-xl);
+}
+
+/* Variante centrada — hero de domicilios sobre fondo oscuro */
+.landing-hero__grid--centrado {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.landing-hero__texto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+}
+
+/* Versión centrada del texto hero */
+.landing-hero__texto--centrado {
+  align-items: center;
+  text-align: center;
+}
+
+.landing-hero__texto--centrado h1,
+.landing-hero__texto--centrado p {
+  text-align: center;
+  max-width: 60ch;
+}
+
+.landing-hero__texto h1 {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.landing-hero__texto p {
+  font-size: var(--texto-md);
+  color: var(--color-gris);
+}
+
+/* Cuando el hero es oscuro, el texto se vuelve blanco */
+.seccion-oscura .landing-hero__texto p {
+  color: rgba(255,255,255,0.75);
+}
+
+.landing-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-xs);
+}
+
+.landing-hero__imagen img,
+.landing-hero__imagen .placeholder-imagen {
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-md);
+}
+
+
+/* -------------------------
+   HERO DE PÁGINA SIMPLE
+   (menu, contacto)
+   Sin imagen, solo texto centrado
+   ------------------------- */
+
+.pagina-hero {
+  padding: var(--espacio-xl) 0 var(--espacio-lg);
+  border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.pagina-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-sm);
+  max-width: 680px;
+}
+
+.pagina-hero__inner h1 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.pagina-hero__inner p {
+  font-size: var(--texto-md);
+  color: var(--color-gris);
+}
+
+
+/* -------------------------
+   TABLA COMPARATIVA
+   (hamburguesa-artesanal)
+   Nosotros vs la competencia
+   ------------------------- */
+
+.comparativa__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-lg);
+  max-width: 860px;
+  margin-inline: auto;
+  margin-top: var(--espacio-xl);
+}
+
+.comparativa__columna {
+  border-radius: var(--radio-md);
+  padding: var(--espacio-lg);
+}
+
+.comparativa__columna--gris {
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-gris-claro);
+}
+
+.comparativa__columna--rojo {
+  background-color: var(--color-rojo);
+  box-shadow: var(--sombra-md);
+}
+
+.comparativa__titulo {
+  font-family: var(--fuente-cuerpo);
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--espacio-md);
+  padding-bottom: var(--espacio-sm);
+  border-bottom: 1px solid currentColor;
+}
+
+.comparativa__titulo--gris {
+  color: var(--color-gris);
+  border-color: var(--color-gris-claro);
+}
+
+.comparativa__titulo--rojo {
+  color: rgba(255,255,255,0.7);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.comparativa__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+}
+
+.comparativa__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-sm);
+  font-size: var(--texto-sm);
+  line-height: 1.5;
+  padding-left: 0;
+}
+
+/* Icono × para "otros puestos" */
+.comparativa__item--no {
+  color: var(--color-gris);
+}
+
+.comparativa__item--no::before {
+  content: "✕";
+  color: #CCC;
+  font-size: var(--texto-sm);
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-weight: 700;
+}
+
+/* Icono ✓ para "El Toldo Rojo" */
+.comparativa__item--si {
+  color: var(--color-blanco);
+}
+
+.comparativa__item--si::before {
+  content: "✓";
+  color: rgba(255,255,255,0.9);
+  font-size: var(--texto-sm);
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-weight: 700;
+}
+
+
+/* -------------------------
+   PROCESO PASO A PASO
+   (hamburguesa-artesanal)
+   Imagen + texto alternados
+   ------------------------- */
+
+.proceso__pasos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-2xl);
+  margin-top: var(--espacio-xl);
+}
+
+.proceso__paso {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--espacio-xl);
+}
+
+/* Alterna el orden: imagen derecha en los pasos pares */
+.proceso__paso--invertido {
+  direction: rtl; /* Invierte la dirección del grid */
+}
+
+.proceso__paso--invertido > * {
+  direction: ltr; /* Restaura el texto normal dentro */
+}
+
+.proceso__paso img,
+.proceso__paso .placeholder-imagen {
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-sm);
+}
+
+.proceso__paso-texto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+}
+
+.proceso__numero {
+  font-family: var(--fuente-titulo);
+  font-size: 4rem;
+  color: var(--color-gris-claro);
+  line-height: 1;
+  /* Número grande decorativo detrás del título */
+}
+
+.proceso__paso-texto h3 {
+  font-size: var(--texto-xl);
+  margin-top: calc(var(--espacio-sm) * -1); /* Sube el h3 bajo el número */
+}
+
+.proceso__paso-texto p {
+  font-size: var(--texto-base);
+  color: var(--color-gris);
+}
+
+
+/* -------------------------
+   GRID DE INGREDIENTES
+   (hamburguesa-artesanal)
+   6 tarjetas en cuadrícula
+   ------------------------- */
+
+.ingredientes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-md);
+  margin-top: var(--espacio-xl);
+}
+
+.ingrediente__tarjeta {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-md);
+  padding: var(--espacio-lg) var(--espacio-md);
+  text-align: center;
+  box-shadow: var(--sombra-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ingrediente__tarjeta:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-md);
+}
+
+.ingrediente__emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: var(--espacio-sm);
+}
+
+.ingrediente__tarjeta h3 {
+  font-size: var(--texto-md);
+  margin-bottom: var(--espacio-xs);
+}
+
+.ingrediente__tarjeta p {
+  font-size: var(--texto-sm);
+  color: var(--color-gris);
+  margin: 0;
+  max-width: 100%;
+  text-align: center;
+}
+
+
+/* -------------------------
+   RESEÑAS SOBRE FONDO OSCURO
+   (hamburguesa-artesanal)
+   Variante oscura de las tarjetas de reseña
+   ------------------------- */
+
+.resena__tarjeta--oscura {
+  background-color: rgba(255,255,255,0.06);
+  border-left-color: var(--color-rojo);
+}
+
+.resena__tarjeta--oscura p {
+  color: rgba(255,255,255,0.85);
+}
+
+.resena__tarjeta--oscura .resena__nombre {
+  color: var(--color-blanco);
+}
+
+.resena__tarjeta--oscura .resena__lugar {
+  color: rgba(255,255,255,0.5);
+}
+
+
+/* -------------------------
+   MENÚ COMPLETO
+   (menu.html)
+   Tarjetas grandes con imagen superior
+   ------------------------- */
+
+.menu-completo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--espacio-xl);
+}
+
+.menu-item {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.menu-item:hover {
+  box-shadow: var(--sombra-md);
+  transform: translateY(-3px);
+}
+
+.menu-item__imagen {
+  height: 260px;
+  border-radius: 0;     /* La imagen va pegada arriba sin redondeo */
+  flex-shrink: 0;
+}
+
+.menu-item__cuerpo {
+  padding: var(--espacio-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+  flex: 1;
+}
+
+.menu-item__encabezado {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--espacio-md);
+}
+
+.menu-item__encabezado h2 {
+  font-size: var(--texto-xl);
+  line-height: 1.2;
+}
+
+.menu-item__precio {
+  font-family: var(--fuente-titulo);
+  font-size: var(--texto-xl);
+  color: var(--color-rojo);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menu-item__descripcion {
+  font-size: var(--texto-base);
+  color: var(--color-gris);
+  font-style: italic;
+  margin: 0;
+}
+
+.menu-item__ingredientes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  flex: 1;
+}
+
+.menu-item__ingredientes li {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  font-size: var(--texto-sm);
+  color: var(--color-gris);
+}
+
+.menu-item__ingredientes svg {
+  color: var(--color-rojo);
+  flex-shrink: 0;
+}
+
+.menu-item__cuerpo .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+
+/* -------------------------
+   BLOQUES DE INFORMACIÓN
+   (menu, domicilios)
+   Grid de 4 datos con icono
+   ------------------------- */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacio-lg);
+  margin-top: var(--espacio-xl);
+}
+
+.info-bloque {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-md);
+  padding: var(--espacio-lg);
+  box-shadow: var(--sombra-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+}
+
+.info-bloque__icono {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.info-bloque h3 {
+  font-size: var(--texto-lg);
+}
+
+.info-bloque p {
+  font-size: var(--texto-sm);
+  color: var(--color-gris);
+  margin: 0;
+  max-width: 100%;
+}
+
+
+/* -------------------------
+   PASOS DE DOMICILIO
+   (domicilios.html)
+   Lista ordenada con número grande y contenido
+   ------------------------- */
+
+.pasos-domicilio {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-top: var(--espacio-xl);
+  list-style: none;
+  position: relative;
+}
+
+/* Línea vertical conectora entre pasos */
+.pasos-domicilio::before {
+  content: "";
+  position: absolute;
+  left: 28px;           /* Centrado con el número (56px / 2 = 28) */
+  top: 56px;            /* Empieza bajo el primer número */
+  bottom: 56px;
+  width: 2px;
+  background-color: var(--color-gris-claro);
+  z-index: 0;
+}
+
+.paso-domicilio {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-lg);
+  padding: var(--espacio-lg) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.paso-domicilio__numero {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+  font-family: var(--fuente-titulo);
+  font-size: var(--texto-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--color-crema); /* Crea separación visual de la línea */
+}
+
+.paso-domicilio__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+  padding-top: var(--espacio-xs);
+}
+
+.paso-domicilio__contenido h3 {
+  font-size: var(--texto-lg);
+}
+
+.paso-domicilio__contenido p {
+  font-size: var(--texto-base);
+  color: var(--color-gris);
+  margin: 0;
+}
+
+/* Botón pequeño dentro del paso */
+.btn--sm {
+  padding: 0.6rem 1.2rem;
+  font-size: var(--texto-sm);
+}
+
+
+/* -------------------------
+   MENÚ EN DOMICILIOS
+   (domicilios.html)
+   Lista simple precio + descripción
+   ------------------------- */
+
+.menu-domicilio__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-top: var(--espacio-xl);
+  border: 1px solid var(--color-gris-claro);
+  border-radius: var(--radio-md);
+  overflow: hidden;
+  background-color: var(--color-blanco);
+}
+
+.menu-domicilio__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-lg);
+  padding: var(--espacio-md) var(--espacio-lg);
+  border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.menu-domicilio__item:last-child {
+  border-bottom: none;
+}
+
+.menu-domicilio__info h3 {
+  font-size: var(--texto-md);
+  margin-bottom: 4px;
+}
+
+.menu-domicilio__info p {
+  font-size: var(--texto-sm);
+  color: var(--color-gris);
+  margin: 0;
+}
+
+.menu-domicilio__precio {
+  font-family: var(--fuente-titulo);
+  font-size: var(--texto-xl);
+  color: var(--color-rojo);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* -------------------------
+   CONTACTO: MAPA + DATOS
+   (contacto.html)
+   Grid mapa izquierda, datos derecha
+   ------------------------- */
+
+.contacto__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacio-xl);
+  align-items: start;
+}
+
+.contacto__datos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-lg);
+}
+
+.contacto__bloque h2 {
+  font-size: var(--texto-2xl);
+}
+
+.contacto__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-md);
+  padding-bottom: var(--espacio-lg);
+  border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.contacto__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contacto__item-icono {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-gris-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-negro);
+}
+
+.contacto__item-icono--verde {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.contacto__item strong {
+  display: block;
+  font-weight: 500;
+  color: var(--color-negro);
+  margin-bottom: 6px;
+  font-size: var(--texto-base);
+}
+
+.contacto__item p {
+  font-size: var(--texto-sm);
+  color: var(--color-gris);
+  margin: 0;
+  max-width: 100%;
+}
+
+.contacto__nota {
+  font-size: var(--texto-xs) !important;
+  margin-top: 4px !important;
+  opacity: 0.75;
+}
+
+.contacto__enlace {
+  display: inline-block;
+  margin-top: var(--espacio-xs);
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  color: var(--color-rojo);
+  text-decoration: none;
+}
+
+.contacto__enlace:hover {
+  text-decoration: underline;
+}
+
+.contacto__redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-sm);
+}
+
+.contacto__red {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1px solid var(--color-gris-claro);
+  border-radius: var(--radio-lg);
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  color: var(--color-negro);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.contacto__red:hover {
+  border-color: var(--color-rojo);
+  color: var(--color-rojo);
+  text-decoration: none;
+}
+
+
+/* -------------------------
+   CÓMO LLEGAR
+   (contacto.html)
+   3 opciones en columnas
+   ------------------------- */
+
+.llegada__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacio-lg);
+  margin-top: var(--espacio-xl);
+}
+
+.llegada__opcion {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio-md);
+  padding: var(--espacio-lg);
+  box-shadow: var(--sombra-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-sm);
+}
+
+.llegada__icono {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.llegada__opcion h3 {
+  font-size: var(--texto-lg);
+}
+
+.llegada__opcion p {
+  font-size: var(--texto-sm);
+  color: var(--color-gris);
+  margin: 0;
+  max-width: 100%;
+}
+
+
+/* -------------------------
+   FOTOS DEL PUESTO
+   (contacto.html)
+   Stack vertical de dos fotos
+   ------------------------- */
+
+.puesto__fotos {
+  max-width: 860px;
+  margin-inline: auto;
+  margin-top: var(--espacio-xl);
+}
+
+.puesto__fotos img {
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-sm);
+  width: 100%;
+}
+
+
+/* -------------------------
+   RESPONSIVE GLOBAL DE LANDINGS
+   Todo lo que cambia en móvil
+   ------------------------- */
+
+@media (max-width: 900px) {
+  .ingredientes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Heroes */
+  .landing-hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-hero__ctas {
+    flex-direction: column;
+  }
+
+  .landing-hero__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Comparativa: apila columnas */
+  .comparativa__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Proceso: apila imagen y texto */
+  .proceso__paso {
+    grid-template-columns: 1fr;
+  }
+
+  .proceso__paso--invertido {
+    direction: ltr;   /* Cancela la inversión en móvil */
+  }
+
+  .proceso__numero {
+    font-size: 2.5rem;
+  }
+
+  /* Ingredientes: 2 columnas en móvil */
+  .ingredientes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Info grid: 1 columna */
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Menú completo: 1 columna */
+  .menu-completo__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contacto: apila mapa y datos */
+  .contacto__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Llegar: 1 columna */
+  .llegada__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Menú domicilio: oculta precio en línea, lo mueve abajo */
+  .menu-domicilio__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espacio-sm);
+  }
+
+  /* Pasos domicilio: simplifica en móvil */
+  .pasos-domicilio::before {
+    display: none;    /* Quita la línea vertical en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ingredientes: 1 columna en pantallas muy pequeñas */
+  .ingredientes__grid {
+    grid-template-columns: 1fr;
+  }
+}
