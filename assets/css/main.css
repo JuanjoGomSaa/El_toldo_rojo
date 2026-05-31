@@ -1,59 +1,48 @@
 /* ============================================================
    EL TOLDO ROJO — Estilos globales
-   Aquí viven los colores, tipografía y espaciados de toda la web.
-   Si cambias una variable aquí, cambia en todas las páginas.
    ============================================================ */
 
-/* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap');
 
-/* --- Variables globales --- */
 :root {
-  /* Colores */
-  --color-rojo:        #C0392B;   /* Rojo toldo — color principal de marca */
-  --color-rojo-oscuro: #96281B;   /* Rojo para hover de botones */
-  --color-crema:       #FDF6EC;   /* Fondo cálido — evoca pan artesanal */
-  --color-negro:       #1A1A1A;   /* Textos principales */
-  --color-gris:        #5C5C5C;   /* Textos secundarios y pies de sección */
-  --color-gris-claro:  #EEEBE5;   /* Fondos de secciones alternas */
+  --color-rojo:        #C0392B;
+  --color-rojo-oscuro: #96281B;
+  --color-crema:       #FDF6EC;
+  --color-negro:       #1A1A1A;
+  --color-gris:        #5C5C5C;
+  --color-gris-claro:  #EEEBE5;
   --color-blanco:      #FFFFFF;
 
-  /* Tipografía */
-  --fuente-titulo:  'Playfair Display', Georgia, serif;  /* H1, H2 — carácter artesanal */
-  --fuente-cuerpo:  'DM Sans', system-ui, sans-serif;    /* Párrafos, botones, nav */
+  --fuente-titulo: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo: 'DM Sans', system-ui, sans-serif;
 
-  /* Tamaños de fuente — escala fluida */
-  --texto-xs:   0.75rem;   /*  12px */
-  --texto-sm:   0.875rem;  /*  14px */
-  --texto-base: 1rem;      /*  16px */
-  --texto-md:   1.125rem;  /*  18px */
-  --texto-lg:   1.375rem;  /*  22px */
-  --texto-xl:   1.75rem;   /*  28px */
-  --texto-2xl:  2.25rem;   /*  36px */
-  --texto-3xl:  3rem;      /*  48px */
+  --texto-xs:   0.75rem;
+  --texto-sm:   0.875rem;
+  --texto-base: 1rem;
+  --texto-md:   1.125rem;
+  --texto-lg:   1.375rem;
+  --texto-xl:   1.75rem;
+  --texto-2xl:  2.25rem;
+  --texto-3xl:  3rem;
 
-  /* Espaciados */
-  --espacio-xs:  0.5rem;   /*   8px */
-  --espacio-sm:  1rem;     /*  16px */
-  --espacio-md:  1.5rem;   /*  24px */
-  --espacio-lg:  2.5rem;   /*  40px */
-  --espacio-xl:  4rem;     /*  64px */
-  --espacio-2xl: 6rem;     /*  96px */
+  --espacio-xs:  0.5rem;
+  --espacio-sm:  1rem;
+  --espacio-md:  1.5rem;
+  --espacio-lg:  2.5rem;
+  --espacio-xl:  4rem;
+  --espacio-2xl: 6rem;
 
-  /* Contenedor máximo */
-  --ancho-max:   1100px;
+  --ancho-max: 1100px;
 
-  /* Bordes */
-  --radio-sm:  6px;
-  --radio-md:  12px;
-  --radio-lg:  24px;
+  --radio-sm: 6px;
+  --radio-md: 12px;
+  --radio-lg: 24px;
 
-  /* Sombras */
   --sombra-sm: 0 2px 8px rgba(0,0,0,0.08);
   --sombra-md: 0 4px 20px rgba(0,0,0,0.12);
 }
 
-/* --- Reset base --- */
+/* --- Reset --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -63,6 +52,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* Evita zoom automático en inputs en iOS Safari */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -72,16 +64,18 @@ body {
   background-color: var(--color-crema);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  /* Evita desbordamiento horizontal en móvil */
+  overflow-x: hidden;
 }
 
-/* --- Contenedor centrado reutilizable --- */
+/* --- Contenedor --- */
 .contenedor {
   width: 90%;
   max-width: var(--ancho-max);
   margin-inline: auto;
 }
 
-/* --- Tipografía global --- */
+/* --- Tipografía --- */
 h1, h2, h3, h4 {
   font-family: var(--fuente-titulo);
   line-height: 1.2;
@@ -93,7 +87,7 @@ h2 { font-size: var(--texto-2xl); }
 h3 { font-size: var(--texto-xl);  }
 
 p {
-  max-width: 65ch; /* Líneas cómodas de leer — nunca más de 65 caracteres */
+  max-width: 65ch;
   color: var(--color-gris);
 }
 
@@ -101,10 +95,7 @@ a {
   color: var(--color-rojo);
   text-decoration: none;
 }
-
-a:hover {
-  text-decoration: underline;
-}
+a:hover { text-decoration: underline; }
 
 img {
   max-width: 100%;
@@ -112,14 +103,13 @@ img {
   display: block;
 }
 
-ul {
-  list-style: none;
-}
+ul { list-style: none; }
 
 /* --- Botones --- */
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--espacio-xs);
   padding: 0.875rem 1.75rem;
   border-radius: var(--radio-sm);
@@ -130,6 +120,10 @@ ul {
   border: none;
   transition: background 0.2s ease, transform 0.1s ease;
   text-decoration: none;
+  /* Mínimo táctil recomendado por Apple/Google: 44px */
+  min-height: 44px;
+  /* Evita que el texto se parta en botones */
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -141,7 +135,6 @@ ul {
   background-color: var(--color-rojo);
   color: var(--color-blanco);
 }
-
 .btn-primario:hover {
   background-color: var(--color-rojo-oscuro);
   color: var(--color-blanco);
@@ -152,7 +145,6 @@ ul {
   color: var(--color-rojo);
   border: 2px solid var(--color-rojo);
 }
-
 .btn-secundario:hover {
   background-color: var(--color-rojo);
   color: var(--color-blanco);
@@ -162,41 +154,35 @@ ul {
   background-color: #25D366;
   color: var(--color-blanco);
 }
-
 .btn-whatsapp:hover {
   background-color: #1ebe5d;
   color: var(--color-blanco);
 }
 
-/* --- Secciones alternas --- */
-/* Alterna crema / gris claro para separar secciones sin usar bordes */
+/* --- Secciones --- */
 .seccion {
   padding: var(--espacio-xl) 0;
 }
-
-.seccion-clara {
-  background-color: var(--color-crema);
-}
-
-.seccion-gris {
-  background-color: var(--color-gris-claro);
-}
-
+.seccion-clara  { background-color: var(--color-crema); }
+.seccion-gris   { background-color: var(--color-gris-claro); }
 .seccion-oscura {
   background-color: var(--color-negro);
   color: var(--color-blanco);
 }
-
 .seccion-oscura h2,
 .seccion-oscura h3,
-.seccion-oscura p {
-  color: var(--color-blanco);
+.seccion-oscura p { color: var(--color-blanco); }
+
+/* Cabecera de sección reutilizable */
+.seccion__cabecera {
+  text-align: center;
+  margin-bottom: var(--espacio-lg);
+}
+.seccion__cabecera p {
+  margin-inline: auto;
 }
 
-/* --- Placeholder de imagen reutilizable ---
-   Úsalo mientras no tengas la foto real.
-   Clase: placeholder-imagen
-   Añade un atributo data-label="nombre de la foto" para identificarla */
+/* --- Placeholder imagen --- */
 .placeholder-imagen {
   background-color: var(--color-gris-claro);
   border: 2px dashed #BBBBBB;
@@ -211,7 +197,7 @@ ul {
   padding: var(--espacio-md);
 }
 
-/* --- Etiqueta destacada (badge) --- */
+/* --- Badge --- */
 .badge {
   display: inline-block;
   background-color: var(--color-rojo);
@@ -222,9 +208,14 @@ ul {
   text-transform: uppercase;
   padding: 0.25rem 0.75rem;
   border-radius: var(--radio-lg);
+  margin-bottom: var(--espacio-xs);
 }
 
-/* --- Responsive: pantallas pequeñas --- */
+/* ============================================================
+   RESPONSIVE GLOBAL
+   ============================================================ */
+
+/* Tablet y móvil grande */
 @media (max-width: 768px) {
   h1 { font-size: var(--texto-2xl); }
   h2 { font-size: var(--texto-xl);  }
@@ -235,9 +226,21 @@ ul {
   }
 }
 
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  h1 { font-size: calc(var(--texto-xl) + 0.25rem); }
+  h2 { font-size: var(--texto-lg); }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: var(--texto-sm);
+  }
+}
 
 
-/* Nueva seccion 5 del menu */
+/* ============================================================
+   SECCIÓN 5 — MENÚ HERO
+   ============================================================ */
 
 .menu__hero {
   display: grid;
@@ -247,9 +250,12 @@ ul {
   overflow: hidden;
 }
 
-.menu__hero-imagen {
-  min-height: 380px;
-  border-radius: 0; /* el overflow del padre ya redondea */
+/* La imagen ocupa toda la celda del grid */
+.menu__hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .menu__hero-cuerpo {
@@ -257,6 +263,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .menu__tag {
@@ -266,7 +273,25 @@ ul {
   font-size: 12px;
   padding: 4px 12px;
   border-radius: 999px;
-  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.menu__ingredientes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 1rem;
+  list-style: disc;
+  color: var(--color-gris);
+  font-size: var(--texto-sm);
+}
+
+.menu__valor {
+  display: block;
+  font-size: var(--texto-xl);
+  font-weight: 700;
+  font-family: var(--fuente-titulo);
+  color: var(--color-negro);
 }
 
 .menu__valor-combo {
@@ -277,7 +302,7 @@ ul {
 }
 
 .btn--bloque {
-  display: block;
+  display: flex;
   width: 100%;
   text-align: center;
 }
@@ -286,11 +311,31 @@ ul {
   font-size: 12px;
   color: #888;
   text-align: center;
-  margin-top: 8px;
+  margin-top: 6px;
+  max-width: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .menu__hero {
     grid-template-columns: 1fr;
+  }
+
+  .menu__hero > img {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .menu__hero-cuerpo {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu__hero-cuerpo {
+    padding: 1.25rem 1rem;
+  }
+  .menu__valor {
+    font-size: var(--texto-lg);
   }
 }

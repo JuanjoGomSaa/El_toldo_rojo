@@ -1,7 +1,5 @@
 /* ============================================================
    EL TOLDO ROJO — Componentes reutilizables
-   Header, footer, FAQ acordeón, tarjetas, CTA WhatsApp flotante.
-   Este archivo depende de las variables definidas en main.css.
    ============================================================ */
 
 /* -------------------------
@@ -9,7 +7,7 @@
    ------------------------- */
 
 .header {
-  position: sticky;        /* Se queda arriba al hacer scroll */
+  position: sticky;
   top: 0;
   z-index: 100;
   background-color: var(--color-blanco);
@@ -24,13 +22,11 @@
   padding: var(--espacio-sm) 0;
 }
 
-/* Logo */
 .header__logo img {
-  height: 48px;   /* Ajusta cuando tengas el logo real */
+  height: 48px;
   width: auto;
 }
 
-/* Placeholder del logo mientras no existe el archivo */
 .header__logo-placeholder {
   font-family: var(--fuente-titulo);
   font-size: var(--texto-lg);
@@ -39,7 +35,7 @@
   letter-spacing: -0.02em;
 }
 
-/* Navegación desktop */
+/* Desktop nav */
 .nav__lista {
   display: flex;
   align-items: center;
@@ -53,30 +49,27 @@
   text-decoration: none;
   transition: color 0.2s;
 }
-
-.nav__enlace:hover {
-  color: var(--color-rojo);
-  text-decoration: none;
-}
-
+.nav__enlace:hover { color: var(--color-rojo); text-decoration: none; }
 .nav__enlace--activo {
   color: var(--color-rojo);
   border-bottom: 2px solid var(--color-rojo);
   padding-bottom: 2px;
 }
 
-/* Botón CTA en el nav */
-.nav__cta {
-  margin-left: var(--espacio-sm);
-}
+.nav__cta { margin-left: var(--espacio-sm); }
 
-/* Botón hamburguesa (menú móvil) */
+/* Botón hamburguesa */
 .nav__toggle {
-  display: none;     /* Oculto en desktop, visible en móvil */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
-  padding: var(--espacio-xs);
+  padding: 10px;
+  /* Área táctil mínima 44px */
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav__toggle span {
@@ -88,47 +81,56 @@
   transition: all 0.3s ease;
 }
 
-/* Estado abierto del menú móvil — clase añadida por JS */
-.nav__toggle.abierto span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.nav__toggle.abierto span:nth-child(2) {
-  opacity: 0;
-}
-.nav__toggle.abierto span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
+.nav__toggle.abierto span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav__toggle.abierto span:nth-child(2) { opacity: 0; }
+.nav__toggle.abierto span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* Responsive: menú móvil */
+/* -------------------------
+   RESPONSIVE NAV
+   ------------------------- */
 @media (max-width: 768px) {
   .nav__toggle {
-    display: block;
+    display: flex;
+  }
+
+  /* El nav pasa a ser un panel que cae desde el header */
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-blanco);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Oculto por defecto */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  /* Clase añadida por JS cuando el menú está abierto */
+  header nav.visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav__lista {
-    display: none;           /* Oculto por defecto en móvil */
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--espacio-md);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--color-blanco);
-    padding: var(--espacio-md) var(--espacio-lg);
-    border-top: 1px solid var(--color-gris-claro);
-    box-shadow: var(--sombra-md);
+    align-items: center;
+    gap: var(--espacio-lg);
+    text-align: center;
   }
 
-  /* Clase añadida por JS cuando el toggle está activo */
-  .nav__lista.visible {
-    display: flex;
+  .nav__enlace {
+    font-size: var(--texto-xl);
   }
 
   .nav__cta {
     margin-left: 0;
-    width: 100%;
-    text-align: center;
+    margin-top: var(--espacio-sm);
   }
 }
 
@@ -150,7 +152,6 @@
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Columna marca */
 .footer__marca p {
   color: rgba(255,255,255,0.6);
   font-size: var(--texto-sm);
@@ -165,7 +166,6 @@
   font-weight: 700;
 }
 
-/* Columnas de enlaces */
 .footer__titulo {
   font-family: var(--fuente-cuerpo);
   font-size: var(--texto-sm);
@@ -176,23 +176,18 @@
   margin-bottom: var(--espacio-md);
 }
 
-.footer__enlaces li {
-  margin-bottom: var(--espacio-xs);
-}
-
+.footer__enlaces li { margin-bottom: var(--espacio-xs); }
 .footer__enlaces a {
   color: rgba(255,255,255,0.7);
   font-size: var(--texto-sm);
   text-decoration: none;
   transition: color 0.2s;
+  /* Área táctil mínima */
+  display: inline-block;
+  padding: 4px 0;
 }
+.footer__enlaces a:hover { color: var(--color-blanco); text-decoration: none; }
 
-.footer__enlaces a:hover {
-  color: var(--color-blanco);
-  text-decoration: none;
-}
-
-/* Datos de contacto */
 .footer__dato {
   display: flex;
   align-items: flex-start;
@@ -202,7 +197,6 @@
   margin-bottom: var(--espacio-sm);
 }
 
-/* Barra inferior del footer */
 .footer__bottom {
   display: flex;
   align-items: center;
@@ -214,8 +208,18 @@
 
 @media (max-width: 768px) {
   .footer__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--espacio-lg);
+  }
+
+  .footer__marca {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
   }
 
   .footer__bottom {
@@ -254,16 +258,24 @@
   align-items: center;
   gap: var(--espacio-md);
   transition: color 0.2s;
+  /* Área táctil mínima */
+  min-height: 44px;
+}
+.faq__pregunta:hover { color: var(--color-rojo); }
+
+/* El h3 dentro del botón no debe tener font-family serif en el FAQ
+   porque ya hereda los estilos del botón */
+.faq__pregunta h3 {
+  font-family: var(--fuente-cuerpo);
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  line-height: 1.4;
 }
 
-.faq__pregunta:hover {
-  color: var(--color-rojo);
-}
-
-/* Icono + que rota a × al abrirse */
 .faq__icono {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
   border-radius: 50%;
   border: 2px solid var(--color-gris-claro);
@@ -283,7 +295,6 @@
 }
 
 .faq__respuesta {
-  /* Animación de apertura suave — altura controlada por JS */
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
@@ -294,6 +305,13 @@
   color: var(--color-gris);
   font-size: var(--texto-base);
   max-width: 65ch;
+}
+
+@media (max-width: 768px) {
+  .faq__pregunta {
+    font-size: var(--texto-base);
+    gap: var(--espacio-sm);
+  }
 }
 
 /* -------------------------
@@ -317,23 +335,27 @@
   font-size: var(--texto-sm);
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Área táctil mínima */
+  min-height: 44px;
 }
-
 .whatsapp-flotante:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(37,211,102,0.45);
   text-decoration: none;
   color: var(--color-blanco);
 }
-
 .whatsapp-flotante svg {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
 }
 
-/* En móvil se hace más compacto — solo el icono */
 @media (max-width: 480px) {
+  .whatsapp-flotante {
+    bottom: var(--espacio-md);
+    right: var(--espacio-md);
+  }
+
   .whatsapp-flotante span {
     display: none;
   }
@@ -341,6 +363,8 @@
   .whatsapp-flotante {
     padding: 1rem;
     border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    justify-content: center;
   }
 }
-

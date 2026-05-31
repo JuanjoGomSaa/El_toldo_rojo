@@ -1,58 +1,80 @@
 /* ============================================================
-   EL TOLDO ROJO — JavaScript global
-   Controla: menú móvil, scroll suave a secciones.
-   No necesitas tocar este archivo salvo que cambies el HTML.
+   EL TOLDO ROJO — main.js
+   Menú móvil + acordeón FAQ
    ============================================================ */
 
+/* -------------------------
+   MENÚ MÓVIL
+   ------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* -------------------------
-     MENÚ MÓVIL
-     Activa/desactiva el menú cuando se toca el botón hamburguesa.
-     ------------------------- */
+  const toggle = document.querySelector('.nav__toggle');
+  const nav    = document.querySelector('header nav');
+  const lista  = document.querySelector('.nav__lista');
 
-  const toggle   = document.querySelector('.nav__toggle');
-  const navLista = document.querySelector('.nav__lista');
-
-  if (toggle && navLista) {
+  if (toggle && nav) {
     toggle.addEventListener('click', function () {
-      const estaAbierto = navLista.classList.contains('visible');
+      const abierto = toggle.classList.toggle('abierto');
+      nav.classList.toggle('visible', abierto);
+      toggle.setAttribute('aria-expanded', abierto);
 
-      navLista.classList.toggle('visible');
-      toggle.classList.toggle('abierto');
-
-      // Accesibilidad: indica a lectores de pantalla si el menú está abierto
-      toggle.setAttribute('aria-expanded', !estaAbierto);
+      /* Bloquea el scroll del body cuando el menú está abierto */
+      document.body.style.overflow = abierto ? 'hidden' : '';
     });
 
-    // Cierra el menú si el usuario hace clic fuera de él
-    document.addEventListener('click', function (evento) {
-      const dentroDelHeader = evento.target.closest('.header');
-      if (!dentroDelHeader) {
-        navLista.classList.remove('visible');
+    /* Cierra el menú al hacer clic en cualquier enlace */
+    if (lista) {
+      lista.querySelectorAll('.nav__enlace').forEach(function (enlace) {
+        enlace.addEventListener('click', function () {
+          toggle.classList.remove('abierto');
+          nav.classList.remove('visible');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    /* Cierra si se hace clic fuera del nav (en el overlay) */
+    nav.addEventListener('click', function (e) {
+      if (e.target === nav) {
         toggle.classList.remove('abierto');
+        nav.classList.remove('visible');
         toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
     });
   }
 
   /* -------------------------
-     MARCAR ENLACE ACTIVO
-     Lee la URL actual y añade la clase "nav__enlace--activo"
-     al enlace que coincide. No tienes que hacerlo a mano en cada página.
+     FAQ ACORDEÓN
      ------------------------- */
+  const items = document.querySelectorAll('.faq__item');
 
-  const enlacesNav    = document.querySelectorAll('.nav__enlace');
-  const urlActual     = window.location.pathname;
+  items.forEach(function (item) {
+    const btn      = item.querySelector('.faq__pregunta');
+    const respuesta = item.querySelector('.faq__respuesta');
 
-  enlacesNav.forEach(function (enlace) {
-    // Normaliza la ruta para comparar (quita la / del final si existe)
-    const rutaEnlace = new URL(enlace.href).pathname.replace(/\/$/, '');
-    const rutaActual = urlActual.replace(/\/$/, '');
+    if (!btn || !respuesta) return;
 
-    if (rutaEnlace === rutaActual) {
-      enlace.classList.add('nav__enlace--activo');
-    }
+    btn.addEventListener('click', function () {
+      const estaAbierto = item.classList.contains('abierto');
+
+      /* Cierra todos los demás */
+      items.forEach(function (otro) {
+        otro.classList.remove('abierto');
+        const r = otro.querySelector('.faq__respuesta');
+        if (r) r.style.maxHeight = null;
+        const b = otro.querySelector('.faq__pregunta');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+
+      /* Abre o cierra el actual */
+      if (!estaAbierto) {
+        item.classList.add('abierto');
+        respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
 
 });
