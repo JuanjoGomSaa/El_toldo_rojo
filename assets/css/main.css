@@ -234,3 +234,63 @@ ul {
     padding: var(--espacio-lg) 0;
   }
 }
+
+
+
+/* Nueva seccion 5 del menu */
+
+.menu__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.menu__hero-imagen {
+  min-height: 380px;
+  border-radius: 0; /* el overflow del padre ya redondea */
+}
+
+.menu__hero-cuerpo {
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu__tag {
+  display: inline-block;
+  background: #fce8e0;
+  color: #8b3a1f;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.menu__valor-combo {
+  display: block;
+  font-size: 14px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.btn--bloque {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.menu__cta-nota {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .menu__hero {
+    grid-template-columns: 1fr;
+  }
+}
